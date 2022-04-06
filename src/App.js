@@ -1,14 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import { CSSStyle } from './global-style';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
+    <CSSStyle />
+  </Router>
+);
 
 export default App;

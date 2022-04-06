@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import searchIcon from '../images/search-icon.svg';
 
 const NavBar = ({ dispatch }) => {
-  const [searchValue, setSearchValue] = useState<string>('');
-  const initial = useRef<boolean>(true);
+  const [searchValue, setSearchValue] = useState('');
+  const initial = useRef(true);
 
   useEffect(() => {
     if (initial.current) {

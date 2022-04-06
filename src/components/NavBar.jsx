@@ -1,0 +1,86 @@
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+
+import searchIcon from '../images/search-icon.svg';
+
+const NavBar = ({ dispatch }) => {
+  const [searchValue, setSearchValue] = useState<string>('');
+  const initial = useRef<boolean>(true);
+
+  useEffect(() => {
+    if (initial.current) {
+      initial.current = false;
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      dispatch({type:'SEARCH_TERM', payload: { searchTerm: searchValue } });
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchValue, dispatch]);
+
+  return (
+    <Container>
+      <Content>
+        <img src={searchIcon} alt='search-icon' />
+        <input
+          type='text'
+          placeholder='Search Movie'
+          onChange={event => setSearchValue(event.target.value)}
+          value={searchValue}
+        />
+      </Content>
+    </Container>
+  );
+};
+
+export default NavBar;
+
+
+//Styled components
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: var(--maxWidth);
+  width: 1280px;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: var(--darkGrey);
+`;
+
+export const Content = styled.div`
+  position: relative;
+  max-width: var(--maxWidth);
+  width: 100%;
+  height: 55px;
+  background: var(--medGrey);
+  margin: 0 auto;
+  border-radius: 40px;
+  color: var(--white);
+
+  img {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    width: 30px;
+  }
+
+  input {
+    font-size: var(--fontBig);
+    position: absolute;
+    left: 0;
+    margin: 8px 0;
+    padding: 0 0 0 60px;
+    border: 0;
+    width: 95%;
+    background: transparent;
+    height: 40px;
+    color: var(--white);
+
+    :focus {
+      outline: none;
+    }
+  }
+`;

@@ -54,7 +54,7 @@ export const Content = styled.div`
   position: relative;
   max-width: var(--maxWidth);
   width: 100%;
-  height: 55px;
+  height: 50px;
   background: var(--medGrey);
   margin: 0 auto;
   border-radius: 40px;
@@ -62,25 +62,31 @@ export const Content = styled.div`
 
   img {
     position: absolute;
-    left: 15px;
+    left: 4px;
     top: 14px;
     width: 30px;
   }
 
   input {
-    font-size: var(--fontBig);
     position: absolute;
     left: 0;
     margin: 8px 0;
-    padding: 0 0 0 60px;
+    padding: 0 0 0 40px;
     border: 0;
     width: 95%;
+    font-size: var(--fontMed);
+    font-weight: var(--boldFont);
     background: transparent;
     height: 40px;
     color: var(--white);
 
     :focus {
       outline: none;
+    }
+
+    ::placeholder {
+        color: #d9cccc;
+        opacity: 1;
     }
   }
 `;

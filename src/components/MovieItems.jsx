@@ -14,13 +14,16 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   max-width: var(--maxWidth);
+  background: var(--lightGrey);
   width: 1280px;
   
   h1 {
-    color: var(--medGrey);
+    margin-top: 0;
+    padding: 2% 0;
+    color: var(--white);
 
     @media screen and (max-width: 768px) {
-      font-size: var(--fontBig);
+      font-size: var(--fontMed);
     }
   }
 `;

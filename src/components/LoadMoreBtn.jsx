@@ -8,7 +8,7 @@ const LoadMoreBtn = ({ text, callback }) => (
   </Container>
 );
 
-// Styled components
+//Styled components
 const Container = styled.button`
   display: block;
   background: var(--darkGrey);
@@ -18,7 +18,7 @@ const Container = styled.button`
   border-radius: 30px;
   color: var(--white);
   border: 0;
-  font-size: var(--fontBig);
+  font-size: var(--fontMed);
   margin: 20px auto;
   transition: all 0.3s;
   outline: none;

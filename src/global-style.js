@@ -2,15 +2,17 @@ import { createGlobalStyle } from 'styled-components';
 
 export const CSSStyle = createGlobalStyle`
   :root {
-    --maxWidth: 1280px;
     --white: #fff;
-    --lightGrey: #eee;
-    --medGrey: #353535;
-    --darkGrey: #1c1c1c;
+    --lightRed: #ff4351;
+    --darkRed: #f93646;
+    --lightGrey: #222931;
+    --darkGrey: #1b1c20;
     --fontSuperBig: 2.5rem;
-    --fontBig: 1.5rem;
+    --fontLarge: 1.4rem;
     --fontMed: 1.2rem;
     --fontSmall: 1rem;
+    --boldFont: 700;
+    --maxWidth: 1280px;
   }
 
   * {

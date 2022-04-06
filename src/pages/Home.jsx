@@ -11,9 +11,7 @@ import NoImage from '../images/no_image.jpg';
 const Home = () => {
   const { state, dispatch } = useMoviesRequest();
 
-
   if (state.error) return <div>Something went wrong ...</div>;
-  console.log("Movies State ", state.results);
 
   const renderList = () => {
     return state.results.map((movie) => {
